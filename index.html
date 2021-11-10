@@ -19,6 +19,17 @@
           </form>
           
       </div>
+      <div>
+        <form onsubmit="return false" >
+            <label for="sortOrder">Sort</label>
+            <select name="sortOrder" onchange="sortProducts(this.value);">
+              <option value="All">All</option>  
+              <option value="LTH">Low To High</option>
+              <option value="HTL">High To Low</option>
+            </select>
+          </form>
+          
+      </div>
     <div id="clothes-box">
     </div>
     <div id="filtered-products">

@@ -2,28 +2,28 @@
   var products = [
     {
         productName: "CL1",
-        productPrice: "$21.99",
+        productPrice: 21.99,
         productImg: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGh8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
         category: "Men"
     },
     {
         productName: "CL2",
-        productPrice: "$29.99",
+        productPrice: 29.99,
         productImg: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGh8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
         category: "Women"
     },{
         productName: "CL3",
-        productPrice: "$49.99",
+        productPrice: 49.99,
         productImg: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGh8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
         category: "Women"
     },{
         productName: "CL4",
-        productPrice: "$19.99",
+        productPrice: 19.99,
         productImg: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGh8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
         category: "Men"
     },{
         productName: "CL5",
-        productPrice: "$10.99",
+        productPrice: 10.99,
         productImg: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2xvdGh8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
         category: "Kids"
     },
@@ -71,5 +71,24 @@ function filterProducts(category){
         renderProducts(filteredProducts);
     }
     
+}
+
+function sortProducts(order){
+    document.getElementById('clothes-box').innerHTML = "";
+    if(order == "LTH"){
+        let lowToHighProd = products.sort((p1,p2) => {
+            console.log(p1.productPrice - p2.productPrice)
+            return p1.productPrice - p2.productPrice
+        })
+        lowToHighProd.forEach(prod => renderEachProduct(prod))
+    }else if(order == "HTL"){
+        let highToLowProd =  products.sort((p1,p2) => {
+            return p2.productPrice - p1.productPrice
+        })
+        highToLowProd.forEach(prod => renderEachProduct(prod))
+    }else{
+        renderProducts(products)
+    }
+
 }
 
