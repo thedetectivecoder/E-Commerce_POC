@@ -4,31 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="products.js"></script>
-    <script src="login.js"></script>
-
     <title>Document</title>
   </head>
-  <body>
-    <div>
-      <ul id="listuser">
-        <h3>All users here:</h3>
-      </ul>
+  <body onload="renderProducts(products)">
+      <div>
+        <form onsubmit="return false" >
+            <label for="category">Choose a category</label>
+            <select name="category" onchange="filterProducts(this.value);">
+              <option value="All">All</option>  
+              <option value="Men">Men</option>
+              <option value="Women">Women</option>
+              <option value="Kids">Kids</option>
+            </select>
+          </form>
+          
+      </div>
+    <div id="clothes-box">
     </div>
-
-    <h4>Register</h4>
-    <form id="register-form" onsubmit="return false"> 
-        <input id="uname" type="text" placeholder="Name" value=""/>
-        <input id="pw" type="password" placeholder="Password" value=""/>
-        <input id="rgstr_btn" type="submit" value="get Account" onClick="registerUser()"/> 
-    </form>
-
-    <br><br>
-    <h4>Login</h4>
-    <form id="login-form"  onsubmit="return false"> 
-        <input id="userName" type="text" placeholder="Enter Username" value=""/>
-        <input id="userPw" type="password" placeholder="Enter Password" value=""/>
-        <input id="login_btn" type="submit" value="Login" onClick="verifyUser()"/> 
-   </form>
+    <div id="filtered-products">
+    </div>
+    <script src="products.js" defer></script>
+    <script src="login.js"></script>
+    
   </body>
 </html>
