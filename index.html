@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="products.js"></script>
-    
-    <title>Document</title>
-</head>
-<body>
-    <div id="clothes-box">
+    <script src="login.js"></script>
 
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ul id="listuser">
+        <h3>All users here:</h3>
+      </ul>
     </div>
-    <script>
-        
-        window.onload = function (){
-        const findDiv = document.getElementById('clothes-box');
-        console.log("FD out: ", findDiv)
-        renderProducts(); 
-        }
-        
-    </script>
-</body>
+
+    <h4>Register</h4>
+    <form id="register-form" onsubmit="return false"> 
+        <input id="uname" type="text" placeholder="Name" value=""/>
+        <input id="pw" type="password" placeholder="Password" value=""/>
+        <input id="rgstr_btn" type="submit" value="get Account" onClick="registerUser()"/> 
+    </form>
+
+    <br><br>
+    <h4>Login</h4>
+    <form id="login-form"  onsubmit="return false"> 
+        <input id="userName" type="text" placeholder="Enter Username" value=""/>
+        <input id="userPw" type="password" placeholder="Enter Password" value=""/>
+        <input id="login_btn" type="submit" value="Login" onClick="verifyUser()"/> 
+   </form>
+  </body>
 </html>
