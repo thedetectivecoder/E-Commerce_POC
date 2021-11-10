@@ -63,7 +63,7 @@ function filterProducts(category){
     console.log("Cat", category)
     document.getElementById('clothes-box').innerHTML = "";
     if(category == "All"){
-        renderProducts()
+        renderProducts(products)
     }else{
         const filteredProducts = products.filter(product => product.category == category);
         console.log("FP : ",filteredProducts);
